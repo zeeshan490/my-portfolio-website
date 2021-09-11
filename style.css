@@ -331,7 +331,7 @@ button{
 
 }
 
-.about-text .timline{
+.about-text .timeline{
     position: relative;
 }
 .about-text .timeline::before{
@@ -347,7 +347,12 @@ button{
 
 .about-text .tab-content{
     padding: 40px 0;
+    display: none;
 }
+.about-text .tab-content.active{
+    display: block;
+}
+
 
 .about-text .timeline-item{
     margin-bottom: 30px;
@@ -363,6 +368,7 @@ button{
     background-color: var(--main-color);
     left: 0;
     top: 16px;
+    border-radius: 50%;
 }
 
 .about-text .timeline-item:last-child{
