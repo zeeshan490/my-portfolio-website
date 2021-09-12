@@ -49,6 +49,9 @@ body {
     -webkit-tap-highlight-color: transparent;
     padding: 5vh 15px;
 }
+body.hide-scrolling{
+    overflow-y: hidden;
+}
 
 body::before {
     content: '';
@@ -78,6 +81,10 @@ img {
     vertical-align: middle;
 }
 
+ul{
+    list-style: none;
+}
+
 section {
     background-color: var(--white-a-25);
     border: 1px solid var(--white-a-40);
@@ -89,6 +96,11 @@ section {
 .main {
     max-width: 1200px;
     margin: auto;
+    transition: all 0.5s ease-in-out;
+}
+
+.main.fade-out{
+    opacity:0;
 }
 
 .container {
@@ -428,3 +440,109 @@ button{
     margin: 20px 0;
 
 }
+
+
+
+.portfolio-popup{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+    visibility: hidden;
+    
+}
+
+.portfolio-popup.open{
+    visibility: visible;
+    overflow-y: auto;
+}
+
+.pp-inner{
+    min-height: 100vh;
+    padding: 40px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pp-content{
+    background-color: var(--white-a-25);
+    padding: 30px;
+    border-radius: 30px;
+    max-width: 900px;
+    width: 100%;
+    border: 1px solid var(--white-a-40);
+    backdrop-filter: var(--backdrop-filter-blur);
+    opacity: 0;
+    transform: scale(0.9);
+}
+.portfolio-popup.open .pp-content{
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.5s ease;
+}
+
+.pp-header{
+    position: relative;
+}
+
+.pp-header .btn{
+    height: 40px;
+    width: 40px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: -40px;
+    top: -40px;
+}
+.pp-thumbnail img{
+    border-radius: 10px;
+}
+
+.pp-header h3{
+    font-size: 25px;
+    text-transform: capitalize;
+    margin: 20px 0 15px;
+}
+
+.pp-body .description{
+    margin-bottom: 20px;
+}
+
+.pp-body .general-info li{
+    margin-bottom: 10px;
+    font-weight: var(--fw-med);
+    text-transform: capitalize;
+}
+
+.pp-body .general-info li span{
+    font-weight: var(--fw-light);
+}
+
+.pp-body .general-info li a{
+    text-transform: lowercase;
+    color: var(--main-color);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
