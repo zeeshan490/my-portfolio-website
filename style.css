@@ -47,7 +47,7 @@ body {
     line-height: var(--lh);
     overflow-x: hidden ;
     -webkit-tap-highlight-color: transparent;
-    padding: 5vh 15px;
+    padding: 35px 15px;
 }
 body.hide-scrolling{
     overflow-y: hidden;
@@ -88,9 +88,17 @@ ul{
 section {
     background-color: var(--white-a-25);
     border: 1px solid var(--white-a-40);
-    min-height: 90vh;
+    min-height: calc(100vh - 70px);
     border-radius: 30px;
     backdrop-filter: var(--backdrop-filter-blur);
+    display: none;
+}
+section.active{
+    display: block;
+}
+
+section.fade-out{
+    animation: fadeOut 0.5s ease-in-out forwards;
 }
 
 .main {
@@ -197,6 +205,18 @@ button{
     color: var(--white);
 }
 
+/*animation keyframes*/
+@keyframes fadeOut{
+    0%{
+        opacity: 1;
+
+    }
+    100%{
+        opacity: 0;
+    }
+
+}
+
 /*-----------header-----------*/
 
 .header{
@@ -220,6 +240,7 @@ button{
     align-items: center;
     justify-content: center;
     margin: 0 15px;
+    z-index: 1;
 
 }
 
@@ -256,32 +277,75 @@ button{
     width: 50%;
 }
 
+.header .nav{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    padding: 35px 15px;
+    overflow-y: auto;
+    visibility: hidden;
+    
+}
 
+.header .nav-inner{
+    min-height: calc(100vh - 70px);
+    max-width: 1200px;
+    margin: auto;
+    background-color: var(--white-a-25);
+    border: 1x solid var(--white-a-40);
+    backdrop-filter: var(--backdrop-filter-blur);
+    padding: 50px 0;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.header .nav-inner ul li{
+    text-align: center;
 
+}
 
+.header .nav-inner ul li a{
+    font-size: 40px;
+    text-transform: capitalize;
+    color: var(--dark-blue);
+    display: block;
+    font-weight: var(--fw-med);
+    padding: 8px 15px;
+    transition: color 0.3s ease;
+    position: relative;
+}
+.header .nav-inner ul li a::before{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 50%;
+    width: 0%;
+    background-color: var(--white-a-25);
+    z-index: -1;
+    transition: width 0.5s ease;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.header .nav-inner ul li a:hover::before{
+    width: 100%;
+}
+.header .nav-inner ul li a:hover{
+    color: var(--main-color);
+}
 
 
 
 /*    home section*/
 .home {
-    display: flex;
+    
     padding: 120px 0;
+}
+.home.active{
+    display: flex;
 }
 
 .home-text, 

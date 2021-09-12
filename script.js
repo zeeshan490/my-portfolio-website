@@ -1,3 +1,30 @@
+
+
+
+/*-----toggle bar-------*/
+const navToggle = document.querySelector(".nav-toggle");
+navToggle.addEventListener(".click", ()=>{
+    hideSection();
+    toggleNavbar();
+    document.body.classList.toggle("hide-scrolling");
+});
+
+function hideSection(){
+    document.querySelector("section.active").classList.toggle("fade-out");
+
+}
+function toggleNavbar(){
+    document.querySelector(".header").classList.toggle("active");
+}
+
+
+
+
+
+
+
+
+
 /*about tabs*/
 
 const tabsContainer = document.querySelector('.about-tabs'),
