@@ -112,3 +112,9 @@ function portfolioItemDetails(portfolioItem){
 
     
 }
+
+
+
+
+
+  
