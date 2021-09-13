@@ -1,4 +1,13 @@
+//page loader
 
+window.addEventListener("load", () =>{
+    document.querySelector(".main").classList.remove("hidden");
+    document.querySelector(".home").classList.add("active");
+    document.querySelector(".pg-loader").classList.add("fade-out");
+    setTimeout(()=>{
+        document.querySelector(".pg-loader").style.display = "none";
+    },600);
+});
 
 
 /*-----toggle bar-------*/
