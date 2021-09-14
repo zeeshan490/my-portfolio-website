@@ -866,7 +866,8 @@ button {
 }
 
 /*contact section*/
-.contact-form, .contact-info {
+.contact-form,
+.contact-info {
     width: 50%;
     padding: 0 15px;
 }
